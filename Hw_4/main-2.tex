@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[fleqn]{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,
+    top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+\newcommand\tab[1][0.7cm]{\hspace*{#1}}
+\newcommand\Gammad{\text{Gamma}}
+\title{Домашняя работа 4}
+
+\begin{document}
+
+\maketitle
+\textbf{Задача 1} (5 баллов)
+Найти мат.ожидание и дисперсию для гамма-распределения.
+
+\textbf{Задача 2} (4 балла)
+
+Пусть $\xi$ с.в. с действительной характеристической функцией $f(t)$ и дисперсией $\sigma^2$. Доказать, что:
+$$f(t) \geq 1 - \frac{t^2\sigma^2}{2}$$
+
+
+\\
+\textbf{Задача 3} (2 балла)
+
+Случайные величины $\xi_1, \xi_2, \dots,\xi_n$ независимые случайные величины, причём $\xi_j \sim$
+$\mathrm{N}(m_j, \sigma_j)$. Найти распределение случайной величины $\eta = \xi_1 + \xi_2 + ... +\xi_n$
+
+\\
+\textbf{Задача 3} (5 баллов)
+
+Докажите, что сумма $n$ независимых случайных величин, равномерно 
+распределенных на отрезке $[-1, 1]$, имеет плотность $f$, задаваемую формулой
+\begin{center}
+    
+
+$f(x) = \frac{1}{\pi}  \int\limits_{0}^{+\infty} \left(\frac{\sin t}{t} \right)^n \cos(tx) dt$
+
+\end{center}
+Верна ли эта формула при $n = 1$?
+
+\textbf{Задача 5} (4 балла)
+
+Пусть $f$ - непрерывная, монотонно-возрастающая, неотрицательная, ограниченная функция, такая, что $f(0) = 0$.
+
+Докажите, что для сходимости $\xi_n$ к 0 по вероятности необходимо и достаточно, чтобы сходилась к 0 последовательность $\mathbb E f(\vert \xi_n \vert)$
+
+\\
+
+\textbf{Задача 6} (5 баллов)
+Пусть $\xi_1, \xi_2, \dots$ -- последовательность случайных величин с конечными дисперсиями. Положим $a_n = \mathbb E \xi_n$, $\sigma_n^2 = \mathbb D\xi_n$. Доказать, что если $a_n \rightarrow \infty$ и $\sigma_n^2 = o(a_n^2)$ при $n \rightarrow \infty$, то 
+
+$$\frac{\xi_n}{a_n} \overset{P}{\rightarrow} 1, n \rightarrow \infty$$
+
+\\
+
+\end{document}

@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[fleqn]{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,
+    top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+\newcommand\tab[1][0.7cm]{\hspace*{#1}}
+\newcommand\Be{\text{Be}}
+\newcommand\Bi{\text{Bi}}
+\newcommand\Po{\text{Poisson}}
+\newcommand\Geo{\text{Geo}}
+\newcommand\NB{\text{NB}}
+\newcommand\Un{\mathcal U}
+\newcommand\Exp{\text{Exp}}
+\newcommand\N{\mathcal N}
+\newcommand\Gammad{\text{Gamma}}
+\newcommand\Beta{\text{Beta}}
+
+\newcommand\myp{\mathbb P}
+\newcommand\E{\mathbb E}
+\newcommand\D{\mathbb D}
+\newcommand\cov{\text{cov}}
+
+\newcommand\dd{\text{d}}
+\newcommand\II{\mathbb I}
+
+\title{Домашняя работа 6}
+
+\begin{document}
+
+\maketitle
+\textbf{Задача 1} (5 баллов)
+Пусть $\xi_0, \xi_1, \dots$ -- норсв $\tilda U[0, 1]$. Найти плотность распределения
+$$\eta_n = \prod\limits_{k=0}^{n}\xi_k$$
+
+\textbf{Решение}
+
+Так как величины независимые, $f(\xi_0, \xi_1 \dots) = f(\xi_0) f(\xi_1) \dots = 1$ (т.к. $f = 1$). \\
+Рассмотрим величину $\eta = \xi_0 \xi_1$. (Для $\eta = \xi_0 \xi_1 \dots$ аналогично) \\
+Функция распределения величины $\eta$ ($A$) будет следующей: $A = \iint\limits_{G} f(\xi_0, \xi_1) d\xi_0 d\xi_1$, где $G$ - множество, в общем случае $n$ -мерное, в котором лежит величина $\eta = \xi_0 \xi_1 \dots \xi_n$. \\
+И тогда $A = \iint\limits_{G} f(\xi_0, \xi_1) d\xi_0 d\xi_1$, если $\eta \in [0; 1]$ и $A = 0$, если $\eta \in [0; 1]$
+
+P.S. Ааааааа как все успеть мозг горит
+
+
+
+\textbf{Задача 2} (5 баллов)
+Пусть функции $f_1(x), f_2(x), f_3(x)$ удовлетворяют соотношению:
+$$f_3(x) = \int\limits_{-\infty}^{\infty} f_1(x - u)f_2(u)du$$. Найти $f_1(x)$, если $f_2(x) = e^{-x^2}, f_3(x) = e^{\frac{-x^2}{2}}$
+
+
+\textbf{Задача 3} (5 баллов)
+
+Каждая целочисленная точка $k$ на числовой оси покрашена в белый цвет с 
+вероятностью $p$ и черный с вероятнстью $q = 1 - p$ (независимо от остальных).
+Пусть $B$ -- множество всех черных точек, а $S$ -- множество всех таких 
+целочисленных точек $x$, что расстояние от $x$ до $B$ не меньше расстояния от 
+$x$ до начала координат.
+Найти математическое ожидание числа элементов множества $S$.
+
+
+\textbf{Задача 4} (5 баллов)
+Докажите, что для любых целых положительных $k$ и $n$ ($k \leq n$) справедливо неравенство:
+
+$$C_n^k \leq 2^n\sqrt{\frac{2}{\pi n}}$$
+
+\textbf{Задача 5} (5 баллов)
+Пусть $\xi$ и $\eta$ -- независимые случайные величины с распределениями 
+$\Beta(2, 1)$ и $\Exp(1)$ соответственно.
+Найдите $\myp \left( \xi < \eta \right)$.
+
+\end{document}

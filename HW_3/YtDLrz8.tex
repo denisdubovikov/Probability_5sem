@@ -1,0 +1,110 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[fleqn]{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,
+    top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+\newcommand\tab[1][0.7cm]{\hspace*{#1}}
+\title{Домашняя работа 3 (дедлайн -- 17:00 23.10.20)}
+
+\begin{document}
+
+\maketitle
+\textbf{Задача 1} (5 баллов)
+Пусть $\xi, \eta \sim$ Exp(1) -- независимые случайные величины. Найдите распределение случайной величины $\frac{\xi}{\xi + \eta}$ (подсказка: рассмотрите преобразование обратное к преобразованию $(\xi, \eta) \longrightarrow (\zeta,\theta), \space \zeta = \frac{\xi}{\xi + \eta}, \space \theta = \xi + \eta$ и выразите $f_{\zeta, \theta}(z, u)$, используя $f_{\zeta, \theta}(x, y)$).
+\\
+
+\textbf{Решение}
+Делаем замену:  $\space \zeta = \frac{\xi}{\xi + \eta}, \space \theta = \xi + \eta$ и выражаем $\xi$ и $\eta$. $\xi = \zeta\theta; \eta = \theta - \theta\zeta$. Находим якобиан этого обратного преобразования: $J = |\theta|$.
+Получаем $f_{\xi,\eta}(\zeta\theta, \theta-\theta\zeta) * |\theta| = |\theta| * f_{\xi\eta}(\zeta\theta) * f_{\xi\eta}(\theta-\theta\zeta)$. 
+\begin{equation*}
+\text{$f_{\xi\eta}(\zeta\theta)$} = 
+ \begin{cases}
+   $\lambda e^{-\lambda (\zeta\theta)}$ &\text{$\zeta\theta >= 0$}\\
+   0 &\text{$\zeta\theta < 0$}
+ \end{cases}
+\end{equation*}
+
+\begin{equation*}
+\text{$f_{\xi\eta}(\theta-\zeta\theta)$} = 
+ \begin{cases}
+   $\lambda e^{-\lambda (\theta-\zeta\theta)}$ &\text{$\theta-\zeta\theta >= 0$}\\
+   0 &\text{$\theta-\zeta\theta < 0$}
+ \end{cases}
+\end{equation*}
+
+$F_{\zeta,\theta}(\zeta\theta, \theta-\theta\zeta) = sign(\theta)\int\limits_{-\infty}^{\zeta\theta}\int\limits_{-\infty}^{\theta-\zeta\theta}f_{\xi\eta}(u_1,u_2)(u_1+u_2) du_1du_2$
+В областях, где $\zeta\theta >= 0 and \theta-\theta\zeta >= 0$ функция $f = \lambda^2e^{-\lambda\theta}$.
+Тогда $f_{\zeta(\frac{\xi}{\xi + \eta})} = \int\limits_{-\infty}^{+\infty}f_{\zeta,\theta}(\frac{\xi}{\xi + \eta}, u_2)du_2$ =
+\begin{equation*}
+\text{} = 
+ \begin{cases}
+   $\zeta\lambda^2e^{-\lambda\theta}$ &\text{$\zeta\theta >= 0 \cap \theta-\theta\zeta >= 0$}\\
+   0 &\text{на остальной плоскости}
+ \end{cases}
+\end{equation*}
+\\
+
+
+\textbf{Задача 2} (3 балла)
+
+Пусть $\xi \sim \mathrm{Poly}(k, p_1, p_2, \dots, p_m)$. Покажите, что $\xi_i \sim \mathrm{Bi}(k, p_i)$
+\\
+
+\textbf{Решение}
+$P(\xi_1 = k_1, \xi_2 = k_2, \dots , \xi_m = k_m) = \frac{k!}{k_1!k_2!\dots k_m!}p_1^{k_1}\dots p_m^{k_m}$
+$P(\xi = k) = C_{n}^{k}p^k(1-p)^{n-k}$
+$\xi$ - вектор, $\xi_i$ - его компонента.
+Вообще, исходя из определения полиномиального распределения: $\xi_i = k_i$ в серии из k экспериментов, $k = k_1 + k_2 + \dots + k_m$, где $\xi_i$ - число "успехов" в серии из k экспериментов. Успех у каждой $\xi_i$ свой. Так, количество i-х успехов $(= \xi_i)$, это когда $\omega = A_i$. Если перейдем к одномерному случаю, то есть будем рассматривать только определенное событие ${A} ={A_i}$, называемое единственным успехом в любом из k экспериментов. Тогда случайная величина $\xi_i$, показывающая число успехов в серии, имеет биномиальное распределение $Bi(k, p)$, где k - число экспериментов в серии, $p = p_i$ - вероятность ${A} = {A_i}$. И это верно для каждой компоненты в "многомерном" случае для $\xi$. Тем самым получаем требуемое.
+\\
+
+\textbf{Задача 3} (5 баллов)
+Случайный вектор $\xi = (\xi_1, \xi_2)$ имеет равномерное распределение в треугольнике с вершинами в точках $(-1, 0), \space (0, 1), \space (1, 0)$. Найти распределение случайной величины $\eta =\frac{\xi_1 + \xi_2}{2}$ 
+\\
+
+\textbf{Решение}
+Площадь треугольника равна 1, значит
+\begin{equation*}
+\text{$f_{\xi_1, \xi_2}(x, y)$} = 
+ \begin{cases}
+   $1$ &\text{$(x,y) \in$ "треугольник"}\\
+   0 &\text{иначе}
+ \end{cases}
+\end{equation*}
+
+$f_{\xi_1}(x) = \int\limits_{0}^{-|x|+1}f_{\xi_1, \xi_2}(x,y)dy$
+
+\begin{equation*}
+\text{$f_{\xi_1}(x) = \int\limits_{0}^{-|x|+1}f_{\xi_1, \xi_2}(x,y)dy$} = 
+ \begin{cases}
+   $-|x|+1$ &\text{$x \in [-1; 1]$}\\
+   0 &\text{$x < -1 \cup x > 1$}
+ \end{cases}
+\end{equation*}
+\\
+
+\textbf{Задача 4} (3 балла)
+В каждую $i$-ую единицу времени живая клетка получает случайную дозу облучения $X_i$, причем $\{X_i\}_{i=1}^{t}$ имеют одинаковую функцию распределения $F_X(x)$ и независимы в совокупности для любого $t$. Получив интегральную дозу облучения, равную $\nu$, клетка погибает. Оценить среднее время жизни клетки $\mathrm{E} T$.
+\\
+
+\textbf{Задача 5} (4 балла)
+Пусть $N$ -- случайная величина, принимающая натуральные значения, $\left\{ \xi_i 
+\right\}_{i=1}^\infty$ -- некоррелированные одинаково распределенные случайные 
+величины с конечными математическими ожиданиями и дисперсиями, не 
+зависящие от $N$.
+Рассмотрим $S_N = \sum\limits_{i=1}^N \xi_i$. Посчитайте $\mathrm{D} S_N$.
+\\
+
+\textbf{Задача 6} (5 баллов)
+Пусть $\xi_1, \xi_2, \dots, \xi_n$ -- независимые одинаково распределённые с.в. с конечным мат.ожиданием, $\eta_n = \xi_1 + \xi_2 + \dots + \xi_n$. Доказать, что
+
+$$\mathbb{E}(\xi_1 \vert \eta_n, \eta_{n+1}, \dots) = \frac{\eta_n}{n}$$
+
+
+\end{document}
